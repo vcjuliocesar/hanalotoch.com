@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Pricing example · Bootstrap</title>
+    <title>Hanal Otoch | Menú digital</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -54,65 +54,68 @@
     </div>
 
 <div class="container">
-    <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-            <img src="img/img200.png" alt="Pizza hawaiana con queso" class="img-thumbnail">
-            <h4 class="my-0 font-weight-normal">Pizza hawaiana con queso</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$150.00 <small class="text-muted"></small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                <li>Queso, piña, peperoni,</li>
-                </ul>
-                <select class="form-control" id="select-1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                </select>
-            </div>
-        </div>
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
+    <form>
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
                 <img src="img/img200.png" alt="Pizza hawaiana con queso" class="img-thumbnail">
-                <h4 class="my-0 font-weight-normal">Hamburguesa receta de la casa</h4>
+                <h4 class="my-0 font-weight-normal">Pizza hawaiana con queso</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$150.00 <small class="text-muted"></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                    <li>Queso, piña, peperoni,</li>
+                    </ul>
+                    <select class="form-control" id="select-1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    </select>
+                </div>
             </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$70.00 <small class="text-muted"></small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                <li>Queso, piña, peperoni,</li>
-                </ul>
-                <select class="form-control" id="select-1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                </select>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <img src="img/img200.png" alt="Pizza hawaiana con queso" class="img-thumbnail">
+                    <h4 class="my-0 font-weight-normal">Hamburguesa receta de la casa</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$70.00 <small class="text-muted"></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                    <li>Queso, piña, peperoni,</li>
+                    </ul>
+                    <select class="form-control" id="select-1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <img src="img/img200.png" alt="Pizza hawaiana con queso" class="img-thumbnail">
+                    <h4 class="my-0 font-weight-normal">Coca cola 2 LT</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$30.00 <small class="text-muted"></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                    <li>Queso, piña, peperoni,</li>
+                    </ul>
+                    <select class="form-control" id="select-1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <img src="img/img200.png" alt="Pizza hawaiana con queso" class="img-thumbnail">
-                <h4 class="my-0 font-weight-normal">Coca cola 2 LT</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$30.00 <small class="text-muted"></small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                <li>Queso, piña, peperoni,</li>
-                </ul>
-                <select class="form-control" id="select-1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                </select>
-            </div>
-        </div>
-    </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Siguiente: Revisa tu orden</button>
+    </form>
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
         <div class="col-12 col-md">
