@@ -50,38 +50,69 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1 class="display-4">Lonchería "El Amigo"</h1>
         <p class="lead">La mejor carne al pastor la encuentras aquí.</p>
-        <p class="lead">Ordene directamente aquí.</p>
     </div>
 
 <div class="container">
-    <form action="revisar">
-        <div class="card-deck mb-3 text-center">
-            @foreach($platillos as $platillo)
-            <div class="card mb-4 shadow-sm">
-                <div class="card-header">
-                <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" class="img-thumbnail" width="200">
-                <h4 class="my-0 font-weight-normal">{{$platillo->nombre}}</h4>
-                </div>
-                <div class="card-body">
-                    <h1 class="card-title pricing-card-title">{{$platillo->precio}} <small class="text-muted"></small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                    <li>{{$platillo->descripcion}},</li>
-                    </ul>
-                    <select class="form-control" id="select-1">
-                    <option>Seleccione cantidad</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    </select>
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <p class="h3 text-center">Agrega tu dirección</p>
+        </div>
+        <div class="card-body">
+        <form action="ordenar">
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre">
                 </div>
             </div>
-            @endforeach
-            
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Celular">Celular</label>
+                    <input type="text" class="form-control" id="celular">
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Siguiente: Revisa tu orden</button>
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Calle">Calle</label>
+                    <input type="text" class="form-control" id="calle">
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Numero">Número</label>
+                    <input type="text" class="form-control" id="numero">
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Numero">Colonia</label>
+                    <input type="text" class="form-control" id="colonia">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="Referencias">Referencias</label>
+                    <input type="text" class="form-control" id="referencia">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Anterior: Domicilio</button>
+            </div>
+            <div class="col-sm">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Siguiente: ORDENAR!</button>
+            </div>
+        </div>
     </form>
+        </div>
+        </div>
+        
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
         <div class="col-12 col-md">

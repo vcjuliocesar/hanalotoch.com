@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Hanal Otoch
+                    Ir a mi Hanal Otoch
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -52,13 +52,16 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link active" href="home">Platillos</a>
+                                <a class="nav-link active" href="/home"><i class="fas fa-home"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/platillos">Platillos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" >Configuración</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="negocio">Negocio</a>
-                                    <a class="dropdown-item" href="cuenta">Cuenta</a>
+                                    <a class="dropdown-item" href="/negocio">Negocio</a>
+                                    <a class="dropdown-item" href="/cuenta">Cuenta</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
