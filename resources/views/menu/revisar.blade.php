@@ -61,14 +61,14 @@
             <div class="card-body">
             <table class="table">
                 <tbody>
-                    
                     <tr>
-                        <th scope="row">nombre</th>
-                        <td>pizza con queso, piña, peperoni y salami</td>
-                        <td>5 (CANTIDAD)</td>
-                        <td>$150.00</td>
-                    </tr>
                     
+                        <th scope="row">{{$platos->nombre}}</th>
+                        <td>{{$platos->descripcion}}</td>
+                        <td>5 (CANTIDAD)</td>
+                        <td>{{$platos->precio}}</td>
+                    
+                    </tr>
                 </tbody>
             </table>
             <div class="row">

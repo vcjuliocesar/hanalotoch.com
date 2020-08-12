@@ -42,11 +42,25 @@ class MenuController extends Controller
         foreach ($seleccion as $cantidad){
             if ($cantidad == "0")
                 unset($seleccionFiltrada[key($seleccion)]);
+                //echo key($seleccion) . "<br />";
             next($seleccion);
         }
 
+        //Consultas a base de datos
+        foreach ($seleccionFiltrada as $sel){
+            //echo key($seleccionFiltrada);
+            $idProductoSeleccionado = key($seleccionFiltrada);
 
-        return view('menu.revisar');
+            //$profession = DB::table('platillos')->whereId($idProductoSeleccionado);
+            
+            $platillo['platos'] = Platillo::findOrFail($idProductoSeleccionado);
+            
+            echo json_encode($platillo);
+            echo "<br/>";
+            next($seleccionFiltrada);
+        }
+
+        return view('menu.revisar', $platillo);
     }
 
     public function domicilio()
