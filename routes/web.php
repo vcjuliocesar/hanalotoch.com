@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 //Rutas públicas
 Route::get('/', 'MenuController@index')->name('index');
-Route::get('/revisar', 'MenuController@revisar')->name('revisar');
+Route::post('/revisar', 'MenuController@revisar')->name('revisar');
 Route::get('/domicilio', 'MenuController@domicilio')->name('domicilio');
 Route::get('/ordenar', 'MenuController@ordenar')->name('ordenar');
 

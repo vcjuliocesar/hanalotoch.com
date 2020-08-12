@@ -60,56 +60,15 @@
             </div>
             <div class="card-body">
             <table class="table">
-            
-            
                 <tbody>
+                    
                     <tr>
-                        <th scope="row">Pizza hawaiana con queso</th>
+                        <th scope="row">nombre</th>
                         <td>pizza con queso, piña, peperoni y salami</td>
-                        <td>
-                            <select class="form-control" id="select-1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>0</option>
-                            </select>
-                        </td>
+                        <td>5 (CANTIDAD)</td>
                         <td>$150.00</td>
                     </tr>
-                    <tr>
-                        <th scope="row">Harburguesa de la casa</th>
-                        <td>Pastor, queso, salsa especial</td>
-                        <td>
-                            <select class="form-control" id="select-1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>0</option>
-                            </select>
-                        </td>
-                        <td>$70.00</td>
-                        
-                    </tr>
-                    <tr>
-                        <th scope="row">Coca cola 2Lt</th>
-                        <td>Refresco</td>
-                        <td>
-                            <select class="form-control" id="select-1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>0</option>
-                            </select>
-                        </td>
-                        <td>$30.00</td>
-                        
-                    </tr>
+                    
                 </tbody>
             </table>
             <div class="row">

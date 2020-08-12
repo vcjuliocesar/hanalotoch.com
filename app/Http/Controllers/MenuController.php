@@ -5,6 +5,7 @@ use App\Http\Controllers\PlatilloController;
 use App\Platillo;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
@@ -30,8 +31,21 @@ class MenuController extends Controller
         //return view('menu.menu');
     }
 
-    public function revisar()
+    public function revisar(Request $request)
     {
+        $seleccion=$request->except('_token');
+
+        $seleccionFiltrada = $seleccion;
+        
+        //Elimino aquellos cuya cantidad es 0
+        //Por tanto, no formarán parte del pedido
+        foreach ($seleccion as $cantidad){
+            if ($cantidad == "0")
+                unset($seleccionFiltrada[key($seleccion)]);
+            next($seleccion);
+        }
+
+
         return view('menu.revisar');
     }
 

@@ -54,26 +54,30 @@
     </div>
 
 <div class="container">
-    <form action="revisar">
+    <form action="revisar" method="post">
+    {{csrf_field()}}
+    
         <div class="card-deck mb-3 text-center">
             @foreach($platillos as $platillo)
+            
             <div class="card mb-4 shadow-sm">
                 <div class="card-header">
-                <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" class="img-thumbnail" width="200">
-                <h4 class="my-0 font-weight-normal">{{$platillo->nombre}}</h4>
+                    <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" class="img-thumbnail" width="200">
+                    <h4 class="my-0 font-weight-normal">{{$platillo->nombre}}</h4>
                 </div>
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">{{$platillo->precio}} <small class="text-muted"></small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                    <li>{{$platillo->descripcion}},</li>
+                        <li>{{$platillo->descripcion}},</li>
                     </ul>
-                    <select class="form-control" id="select-1">
-                    <option>Seleccione cantidad</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    Seleccione:
+                    <select class="form-control" id="{{$loop->iteration}}" name="{{$platillo->id}}">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
                     </select>
                 </div>
             </div>
