@@ -63,11 +63,6 @@
                 <tbody>
                     <tr>
                     
-                        <th scope="row">{{$platos->nombre}}</th>
-                        <td>{{$platos->descripcion}}</td>
-                        <td>5 (CANTIDAD)</td>
-                        <td>{{$platos->precio}}</td>
-                    
                     </tr>
                 </tbody>
             </table>

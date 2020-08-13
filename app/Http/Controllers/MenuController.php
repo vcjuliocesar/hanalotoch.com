@@ -27,8 +27,8 @@ class MenuController extends Controller
     public function index()
     {
         $datos['platillos'] = Platillo::paginate(50);
-        return view('menu.menu',$datos);
-        //return view('menu.menu');
+        //return view('menu.index',$datos);
+        return view('menu.menu', $datos);
     }
 
     public function revisar(Request $request)
@@ -42,7 +42,7 @@ class MenuController extends Controller
         foreach ($seleccion as $cantidad){
             if ($cantidad == "0")
                 unset($seleccionFiltrada[key($seleccion)]);
-                //echo key($seleccion) . "<br />";
+                //echo key($seleccion) . "=>" . $cantidad ."<br />";
             next($seleccion);
         }
 
@@ -53,14 +53,18 @@ class MenuController extends Controller
 
             //$profession = DB::table('platillos')->whereId($idProductoSeleccionado);
             
-            $platillo['platos'] = Platillo::findOrFail($idProductoSeleccionado);
+            $platillo['data'] = Platillo::findOrFail($idProductoSeleccionado);
             
-            echo json_encode($platillo);
-            echo "<br/>";
+            //$try = DB::select('SELECT id FROM platillos WHERE id = ?', [11,14]);
+
+            //echo json_encode($platillo);
+            //echo "<br/>";
             next($seleccionFiltrada);
         }
-
-        return view('menu.revisar', $platillo);
+        //$try['platillos'] = DB::select('select * from `platillos` where `id` in (11, 14) ');
+        $try['platillos'] = Platillo::select('select * from `platillos` where `id` in (11, 14) ');
+        echo json_encode($try);
+        return view('menu.revisar');
     }
 
     public function domicilio()
@@ -68,8 +72,10 @@ class MenuController extends Controller
         return view('menu.domicilio');
     }
 
-    public function ordenar()
+    public function ordenar(Request $request)
     {
-        return view('menu.ordenar');
+        $seleccion=$request->except('_token'); //Elimino el token del array, no se usará.
+        json_encode($seleccion);
+        return view('menu.revisar');
     }
 }

@@ -58,7 +58,7 @@
             <p class="h3 text-center">Agrega tu dirección</p>
         </div>
         <div class="card-body">
-        <form action="ordenar">
+        
         <div class="row">
             <div class="col-sm">
                 <div class="form-group">
