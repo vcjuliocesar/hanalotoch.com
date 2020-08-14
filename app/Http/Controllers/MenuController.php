@@ -34,37 +34,54 @@ class MenuController extends Controller
     public function revisar(Request $request)
     {
         $seleccion=$request->except('_token');
-
-        $seleccionFiltrada = $seleccion;
         
-        //Elimino aquellos cuya cantidad es 0
-        //Por tanto, no formarán parte del pedido
+        $productosSeleccionados = array();
+        $cantidadesSeleccionadas = array();
+
         foreach ($seleccion as $cantidad){
-            if ($cantidad == "0")
-                unset($seleccionFiltrada[key($seleccion)]);
-                //echo key($seleccion) . "=>" . $cantidad ."<br />";
+            if($cantidad <> "0"){
+                array_push($productosSeleccionados, key($seleccion));
+                array_push($cantidadesSeleccionadas, $cantidad);
+            }
             next($seleccion);
         }
 
-        //Consultas a base de datos
-        foreach ($seleccionFiltrada as $sel){
-            //echo key($seleccionFiltrada);
-            $idProductoSeleccionado = key($seleccionFiltrada);
-
-            //$profession = DB::table('platillos')->whereId($idProductoSeleccionado);
-            
-            $platillo['data'] = Platillo::findOrFail($idProductoSeleccionado);
-            
-            //$try = DB::select('SELECT id FROM platillos WHERE id = ?', [11,14]);
-
-            //echo json_encode($platillo);
-            //echo "<br/>";
-            next($seleccionFiltrada);
+        $orden = "";
+        $total = 0;
+        
+        $domicilio = "Para enviarse a la siguiente dirección:".PHP_EOL."Calle: ";
+        $domicilio = $domicilio . $seleccion['calle'] . " " . $seleccion['numero'] . " " . $seleccion['colonia'] .PHP_EOL;
+        $domicilio = $domicilio . $seleccion['referencia'];
+        $cel = PHP_EOL."Contacto: ".$seleccion['celular'];
+        
+        $mensaje = "Hola buenas noches, mi nombre es ".$seleccion['contacto']." y mi orden es:".PHP_EOL.PHP_EOL;
+        unset($seleccion['contacto'], $seleccion['calle'], $seleccion['numero'], $seleccion['colonia'], $seleccion['referencia'], $seleccion['celular']);
+        
+        $s = $productosSeleccionados;
+        foreach ($s as $v) {
+            if($v == "contacto")
+                unset($productosSeleccionados[key($s)]);
+            if($v == "calle")
+                unset($productosSeleccionados[key($s)]);
+            if($v == "numero")
+                unset($productosSeleccionados[key($s)]);
+            if($v == "colonia")
+                unset($productosSeleccionados[key($s)]);
+            if($v == "referencia")
+                unset($productosSeleccionados[key($s)]);
+            if($v == "celular")
+                unset($productosSeleccionados[key($s)]);
+            next($s);
         }
-        //$try['platillos'] = DB::select('select * from `platillos` where `id` in (11, 14) ');
-        $try['platillos'] = Platillo::select('select * from `platillos` where `id` in (11, 14) ');
-        echo json_encode($try);
-        return view('menu.revisar');
+
+        for($i=0; $i<count($productosSeleccionados); $i++){
+            $plato = DB::table('platillos')->where('id', strval($productosSeleccionados[$i]))->first();
+            $linea = strval($cantidadesSeleccionadas[$i]) . " x " .$plato->nombre. " ($". strval(intval($plato->precio)*$cantidadesSeleccionadas[$i]).")".PHP_EOL;
+            $total = $total + (intval($plato->precio)*$cantidadesSeleccionadas[$i]);
+            $orden = $orden . $linea;
+        }
+        $mensaje = $mensaje . $orden . "Total: $". $total .PHP_EOL.PHP_EOL.$domicilio . $cel;
+        return view('menu.revisar', ['mjs' => $mensaje]);
     }
 
     public function domicilio()
@@ -76,6 +93,6 @@ class MenuController extends Controller
     {
         $seleccion=$request->except('_token'); //Elimino el token del array, no se usará.
         json_encode($seleccion);
-        return view('menu.revisar');
+        //return view('menu.revisar');
     }
 }

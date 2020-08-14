@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Hanal Otoch | Menú digital</title>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
@@ -53,29 +53,11 @@
     </div>
 
 <div class="container">
-    <form action="domicilio">
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <p class="h3 text-center">Revisa tu orden</p>
-            </div>
-            <div class="card-body">
-            <table class="table">
-                <tbody>
-                    <tr>
-                    
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row">
-                <div class="col-sm">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Anterior: Menú</button>
-                </div>
-                <div class="col-sm">
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Siguiente: Agregar domicilio</button>
-                </div>
-            </div>
-        </div>
-    </form>
+      
+    <a href="https://wa.me/529999654413?text={{urlencode($mjs)}}." class="btn btn-success btn-lg btn-block" target="_blank"> <i class="fab fa-whatsapp"></i> Haz click aquí para realizar tu encargo</i></a> 
+    
+      
+    
 </div>
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">

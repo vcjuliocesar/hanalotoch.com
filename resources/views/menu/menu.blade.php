@@ -62,7 +62,7 @@
         <p class="lead">Ordene directamente aquí.</p>
     </div>
     <div class="container">
-        <form action="ordenar" method="post">
+        <form action="revisar" method="post">
             {{csrf_field()}}
             <div id="smartwizard">
                     <ul class="nav">
@@ -133,13 +133,13 @@
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Nombre">Nombre</label>
-                                        <input type="text" class="form-control" id="nombre">
+                                        <input type="text" class="form-control" id="nombre" name="contacto">
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Celular">Celular</label>
-                                        <input type="text" class="form-control" id="celular">
+                                        <input type="text" class="form-control" id="celular" name="celular">
                                     </div>
                                 </div>
                             </div>
@@ -147,19 +147,19 @@
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Calle">Calle</label>
-                                        <input type="text" class="form-control" id="calle">
+                                        <input type="text" class="form-control" id="calle" name="calle">
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Numero">Número</label>
-                                        <input type="text" class="form-control" id="numero">
+                                        <input type="text" class="form-control" id="numero" name="numero">
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Numero">Colonia</label>
-                                        <input type="text" class="form-control" id="colonia">
+                                        <input type="text" class="form-control" id="colonia" name="colonia">
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Referencias">Referencias</label>
-                                        <input type="text" class="form-control" id="referencia">
+                                        <input type="text" class="form-control" id="referencia" name="referencia">
                                     </div>
                                 </div>
                             </div>
