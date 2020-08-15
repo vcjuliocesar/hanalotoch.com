@@ -57,13 +57,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="/platillos">Platillos</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" >Configuración</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/negocio">Negocio</a>
-                                    <a class="dropdown-item" href="/cuenta">Cuenta</a>
-                                </div>
-                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -89,7 +89,7 @@
                                 <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
+                    
                     <th scope="col">Nombre del platillo</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">Precio</th>
@@ -100,7 +100,7 @@
             <tbody>
                 @foreach($platillos as $platillo)
                 <tr>
-                    <th scope="row">{{$loop->iteration}}</th>
+                    
                     <td>{{$platillo->nombre}}</td>
                     <td>{{$platillo->descripcion}}</td>
                     <td>${{$platillo->precio}}</td>

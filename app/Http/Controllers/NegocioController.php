@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Negocio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NegocioController extends Controller
 {
@@ -23,7 +25,13 @@ class NegocioController extends Controller
      */
     public function index()
     {
-        return view('admin.negocio');
+        
+        $negocio = DB::table('negocio')->first();
+        //dd($negocio);
+        if ($negocio == null)
+            return view('admin.negocio.create'); //Si es null cargar create
+        //Cargar edit, ya que no se cumple al anterior.
+        return view('admin.negocio.edit', compact($negocio));
     }
 
 
@@ -36,15 +44,7 @@ class NegocioController extends Controller
     public function store(Request $request)
     {
         $negocio = $request->except('_token');
-        
-        if($request->hasFile('imagenPortada')){
-            $negocio['imagenPortada'] = $request->file('imagenPortada')->store('uploads','public');
-        }
-
-        if($request->hasFile('imagenPerfil')){
-            $negocio['imagenPerfil'] = $request->file('imagenPerfil')->store('uploads','public');
-        }
-
+            
         Negocio::insert($negocio);
 
         return json_encode($negocio);

@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 //Rutas públicas
 Route::get('/', 'MenuController@index')->name('index');
 Route::post('/revisar', 'MenuController@revisar')->name('revisar');
-//Route::get('/domicilio', 'MenuController@domicilio')->name('domicilio');
-//Route::post('/ordenar', 'MenuController@ordenar')->name('ordenar');
 
 //Rutas privadas
 Auth::routes();
@@ -22,4 +20,6 @@ Route::patch('/platillos/actualizar/{id}', 'PlatilloController@update')->name('a
 Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy')->name('borrarplatillo');
 
 Route::get('/negocio', 'NegocioController@index')->name('negocio');
+Route::post('/negocio/guardar', 'NegocioController@store')->name('agregarnegocio');;
+Route::patch('/negocio/editar/{id}', 'NegocioController@edit')->name('editnegocio');
 Route::get('/cuenta', 'CuentaController@index')->name('cuenta');
