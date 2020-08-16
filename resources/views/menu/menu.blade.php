@@ -49,7 +49,7 @@
             <a class="btn btn-outline-primary" href="{{ route('login') }}">Entrar</a>
 
         @if (Route::has('register'))
-            <a href="{{ route('register') }}">Registro</a>
+            <a href="{{ route('register') }}">.</a>
         @endif
         @endauth
             </div>
