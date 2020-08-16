@@ -54,7 +54,7 @@ class MenuController extends Controller
         $domicilio = $domicilio . $seleccion['referencia'];
         $cel = PHP_EOL."Contacto: ".$seleccion['celular'];
         
-        $mensaje = "Hola buenas noches, mi nombre es ".$seleccion['contacto']." y mi orden es:".PHP_EOL.PHP_EOL;
+        $mensaje = "Hola, soy ".$seleccion['contacto']." y mi orden es:".PHP_EOL.PHP_EOL;
         unset($seleccion['contacto'], $seleccion['calle'], $seleccion['numero'], $seleccion['colonia'], $seleccion['referencia'], $seleccion['celular']);
         
         $s = $productosSeleccionados;
