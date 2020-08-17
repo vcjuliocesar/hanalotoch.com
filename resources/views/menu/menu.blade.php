@@ -85,48 +85,46 @@
 
                     <div class="tab-content">
                         <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
-                            <div class="card-deck mb-3 text-center">
+                            <!-- <div class="card-deck mb-3 text-center"> -->
                                 <table class="table">
-            <thead>
-                <tr>
-                    
-                    <th scope="col">Nombre del platillo</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Fotografía</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($platillos as $platillo)
-                <tr>
-                    
-                    <td>{{$platillo->nombre}}</td>
-                    <td>{{$platillo->descripcion}}</td>
-                    <td>${{$platillo->precio}}</td>
-                    <td>
-                        <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="" width="75">
-                    </td>
-                    <td>
-                        
-                            <select class="form-control" id="{{$loop->iteration}}" name="{{$platillo->id}}">
-                                            <option>0</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                        
-                        
-                         
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th scope="col">Platillo</th>
+                                            <th scope="col">Descripción</th>
+                                            <!-- <th scope="col">Precio</th> -->
+                                            <th scope="col">Fotografía</th>
+                                            <th scope="col">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($platillos as $platillo)
+                                        <tr>
+                                            
+                                            <td>{{$platillo->nombre}}<br /><strong>${{$platillo->precio}}</strong></td>
+                                            <td>{{$platillo->descripcion}}</td>
+                                            <!-- <td>${{$platillo->precio}}</td> -->
+                                            <td>
+                                                <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="" width="70">
+                                            </td>
+                                            <td>
+                                                
+                                                    <select class="form-control" id="{{$loop->iteration}}" name="{{$platillo->id}}">
+                                                                    <option>0</option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                </select>
+                                                
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                                 
-                            </div>
+                            <!-- </div> -->
                         </div>
                         <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
                             <div class="row">
@@ -195,7 +193,7 @@
             <div class="col-6 col-md">
                 <h5>Sobre HanalOtoch.com</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Rupestre Software Consulting</a></li>
+                    <li><a class="text-muted" href="https://rupestre.co">Rupestre Software Consulting</a></li>
                 </ul>
             </div>
             </div>
