@@ -21,7 +21,7 @@
         <div class="col-sm">
         <div class="form-group">
             <label for="Precio">{{'Precio'}}</label>
-            <input type="text" class="form-control" name="precio" id="precio" value="">
+            <input type="number" class="form-control" name="precio" id="precio" value="">
         </div>
         </div>
     </div>
