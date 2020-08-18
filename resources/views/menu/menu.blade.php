@@ -94,7 +94,7 @@
                                             <th scope="col">Descripción</th>
                                             <!-- <th scope="col">Precio</th> -->
                                             <th scope="col">Fotografía</th>
-                                            <th scope="col">Acciones</th>
+                                            <th scope="col">Cantidad</th>
                                         </tr>
                                     </thead>
                                     <tbody>
