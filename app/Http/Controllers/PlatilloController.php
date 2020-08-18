@@ -28,7 +28,7 @@ class PlatilloController extends Controller
     public function index()
     {
         $datos['platillos'] = Platillo::paginate(50);
-        return view('admin.platillo.index',$datos);
+        return view('app.platillos.index',$datos);
     }
 
     /**
@@ -38,7 +38,7 @@ class PlatilloController extends Controller
      */
     public function create()
     {
-        return view('admin.platillo.crear');
+        return view('app.platillos.agregar');
     }
 
     /**
@@ -76,10 +76,11 @@ class PlatilloController extends Controller
      * @param  \App\Platillo  $platillo
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()  //agregar $id
     {
-        $platillo = Platillo::findOrFail($id);
-        return view('admin.platillo.edit', compact('platillo'));
+        //$platillo = Platillo::findOrFail($id);
+        //return view('app.platillos.editar', compact('platillo'));
+        return view('app.platillos.editar');
     }
 
     /**

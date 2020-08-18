@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 
 <title>Panel de administración | Hanal Otoch</title>
-<link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
+<link rel="icon" type="image/ico" href="{{url('/assets/images/favicon.ico')}}" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- vendor css files -->
-<link rel="stylesheet" href="assets/js/vendor/bootstrap/bootstrap.min.css">    
-<link rel="stylesheet" href="assets/css/vendor/animsition.min.css">
-<link rel="stylesheet" href="assets/js/vendor/morris/morris.css">    
+<link rel="stylesheet" href="{{url('/assets/js/vendor/bootstrap/bootstrap.min.css')}}">    
+<link rel="stylesheet" href="{{url('/assets/css/vendor/animsition.min.css')}}">
+<link rel="stylesheet" href="{{url('/assets/js/vendor/morris/morris.css')}}">    
 <!-- project main css files -->
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="{{url('/assets/css/main.css')}}">
 </head>
 <body id="falcon" class="main_Wrapper">
     <div id="wrap" class="animsition">
@@ -87,19 +87,19 @@
                                             </a>
                                         </li> -->
                                         <li>
-                                            <a href="charts.html">
+                                            <a href="{{url('platillos')}}">
                                                 <i class="fa fa-coffee"></i>
                                                 <span>Platillos</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="charts.html">
+                                            <a href="{{url('menus')}}">
                                                 <i class="fa fa-th-list"></i>
                                                 <span>Menús</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="charts.html">
+                                            <a href="{{url('configuracion')}}">
                                                 <i class="fa fa-puzzle-piece"></i>
                                                 <span>Mi Hanal Otoch</span>
                                             </a>
@@ -138,19 +138,40 @@
         </section>
     </div>
     <!-- Vendor JavaScripts -->
-    <script src="assets/bundles/libscripts.bundle.js"></script>
-    <script src="assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="{{url('/assets/bundles/libscripts.bundle.js')}}"></script>
+    <script src="{{url('/assets/bundles/vendorscripts.bundle.js')}}"></script>
 
     <!--/ vendor javascripts -->
-    <script src="assets/bundles/flotscripts.bundle.js"></script>    
-    <script src="assets/bundles/d3cripts.bundle.js"></script>
-    <script src="assets/bundles/sparkline.bundle.js"></script>
-    <script src="assets/bundles/raphael.bundle.js"></script>
-    <script src="assets/bundles/morris.bundle.js"></script>
-    <script src="assets/bundles/loadercripts.bundle.js"></script>
+    <script src="{{url('/assets/bundles/flotscripts.bundle.js')}}"></script>    
+    <script src="{{url('/assets/bundles/d3cripts.bundle.js')}}"></script>
+    <script src="{{url('/assets/bundles/sparkline.bundle.js')}}"></script>
+    <script src="{{url('/assets/bundles/raphael.bundle.js')}}"></script>
+    <script src="{{url('/assets/bundles/morris.bundle.js')}}"></script>
+    <script src="{{url('/assets/bundles/loadercripts.bundle.js')}}"></script>
+    <script src="{{url('/assets/js/vendor/filestyle/bootstrap-filestyle.min.js')}}"></script>
 
     <!-- page Js -->
-    <script src="assets/bundles/mainscripts.bundle.js"></script>
-    <script src="assets/js/page/index.js"></script>     
+    <script src="{{url('/assets/bundles/mainscripts.bundle.js')}}"></script>
+    <script src="{{url('/assets/js/page/index.js')}}"></script>   
+
+    <!--  Custom JavaScripts -->
+    <script src="{{url('assets/bundles/mainscripts.bundle.js')}}"></script>
+
+    <script >
+        $(window).load(function(){
+            $('#ex1').slider({
+                formatter: function(value) {
+                    return 'Current value: ' + value;
+                }
+            });
+            $("#ex1").on("slide", function(slideEvt) {
+                $("#ex1SliderVal").text(slideEvt.value);
+            });
+
+            $("#ex2, #ex3, #ex4, #ex5").slider();
+          
+            //*load wysiwyg editor
+        });
+    </script>   
 </body>
 </html>

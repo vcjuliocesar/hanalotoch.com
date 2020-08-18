@@ -15,9 +15,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/platillos', 'PlatilloController@index')->name('platillo');
 Route::get('/platillos/crear', 'PlatilloController@create')->name('agregarplatillo');
 Route::post('/platillos/guardar', 'PlatilloController@store')->name('guardarplatillo');
-Route::get('/platillos/editar/{id}', 'PlatilloController@edit')->name('editarplatillo');
+Route::get('/platillos/editar', 'PlatilloController@edit')->name('editarplatillo');
+//Route::get('/platillos/editar/{id}', 'PlatilloController@edit')->name('editarplatillo');
 Route::patch('/platillos/actualizar/{id}', 'PlatilloController@update')->name('actualizarplatillo');
-Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy')->name('borrarplatillo');
+Route::delete('/platillos/borrar', 'PlatilloController@destroy')->name('borrarplatillo');
+//Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy')->name('borrarplatillo');
 
 Route::get('/negocio', 'NegocioController@index')->name('negocio');
 Route::post('/negocio/guardar', 'NegocioController@store')->name('agregarnegocio');;

@@ -28,7 +28,7 @@ class MenuController extends Controller
     {
         $datos['platillos'] = Platillo::paginate(50);
         //return view('menu.index',$datos);
-        return view('theme.app', $datos);
+        return view('app.index', $datos);
     }
 
     public function revisar(Request $request)
