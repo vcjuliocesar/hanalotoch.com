@@ -21,7 +21,7 @@
             <header class="clearfix">
                 <!-- Branding -->
                 <div class="branding">
-                    <a class="brand" href="index.html">
+                    <a class="brand" href="{{url('/')}}">
                         <span>Hanal Otoch</span>
                     </a>
                     <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline">
@@ -195,21 +195,6 @@
     <!--  Custom JavaScripts -->
     <script src="{{url('assets/bundles/mainscripts.bundle.js')}}"></script>
 
-    <script >
-        $(window).load(function(){
-            $('#ex1').slider({
-                formatter: function(value) {
-                    return 'Current value: ' + value;
-                }
-            });
-            $("#ex1").on("slide", function(slideEvt) {
-                $("#ex1SliderVal").text(slideEvt.value);
-            });
-
-            $("#ex2, #ex3, #ex4, #ex5").slider();
-          
-            //*load wysiwyg editor
-        });
-    </script>   
+       
 </body>
 </html>
