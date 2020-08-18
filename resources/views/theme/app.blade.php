@@ -29,6 +29,44 @@
                     </a>
                 </div>
                 <!-- Branding end -->
+                <ul class="nav-left pull-left list-unstyled list-inline">
+                    <li class="leftmenu-collapse">
+                        <a role="button" tabindex="0" class="collapse-leftmenu">
+                            <i class="fa fa-outdent"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="dropdown leftmenu-collapse">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-plus mr-5"></i>Nuevo...
+                        </a>
+                        <div class="dropdown-menu pull-left panel panel-default" role="menu">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a role="button" class="media">
+                                        <span class="pull-left media-object">
+                                            <i class="fa fa-briefcase"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="block">Nuevo platillo</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a role="button" class="media">
+                                        <span class="pull-left media-object">
+                                            <i class="fa fa-area-chart"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="block">Nuevo menú</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
                 <!-- Right-side navigation -->
                 <ul class="nav-right pull-right list-inline">
                     <li class="dropdown nav-profile">
