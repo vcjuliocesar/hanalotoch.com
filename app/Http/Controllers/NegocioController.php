@@ -26,12 +26,13 @@ class NegocioController extends Controller
     public function index()
     {
         
-        $negocio = DB::table('negocio')->first();
+        //$negocio = DB::table('negocio')->first();
         //dd($negocio);
-        if ($negocio == null)
-            return view('admin.negocio.create'); //Si es null cargar create
+        //if ($negocio == null)
+         //   return view('admin.negocio.create'); //Si es null cargar create
         //Cargar edit, ya que no se cumple al anterior.
-        return view('admin.negocio.edit', compact($negocio));
+        //return view('admin.negocio.edit', compact($negocio));
+        return view('app.negocio.index');
     }
 
 

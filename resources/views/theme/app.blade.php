@@ -137,7 +137,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{url('configuracion')}}">
+                                            <a href="{{url('negocio')}}">
                                                 <i class="fa fa-puzzle-piece"></i>
                                                 <span>Mi Hanal Otoch</span>
                                             </a>

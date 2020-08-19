@@ -7,8 +7,8 @@
 				<div class="b-b mb-10">
 					<div class="row">
 						<div class="col-sm-6 col-xs-12">
-							<h1 class="h3 m-0">Menús</h1>
-							<small class="text-muted">Si tienes un menú de desayuno y otro para cenas aquí puedes crearlo y asociar qué platillos están en los menús. Para que un platillo se muestre en el menú público tiene que estar asociado en el menú disponible.</small>
+							<h1 class="h3 m-0">Catálogo de Menús</h1>
+							<small class="text-muted">Si tienes un menú de desayuno y otro para cenas aquí puedes crearlo y asociar qué platillos están en los menús. <br/>Para que un platillo se muestre en el menú público tiene que estar asociado en el menú disponible.</small>
 						</div>
 					</div>
 				</div>
@@ -19,24 +19,24 @@
 						<section class="boxs">
 							<div class="boxs-header">
 								<h3 class="custom-font hb-green">
-									Catálogo de <strong>platillos</strong></h3>
+									<a href="{{url('/menus/crear')}}" class="btn btn-raised btn-success btn-sm">
+										Agregar menú<div class="ripple-container"></div></a>
+								</h3>
 							</div>
 							<div class="boxs-body p-0">
 								<div class="table-responsive">
 									<table class="table table-middle">
 										<thead>
 											<tr>
-												<th>Platillo</th>
+												<th>Menú</th>
 												<th>Descripción</th>
-                                                <th>Precio</th>
-												<th>Fecha de registro</th>
+												<th>Fecha de creación</th>
 												<th>Status</th>
 												<th>Acciones</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												
 												<td class="nowrap">
 													<img src="assets/images/avatar2.png" alt="Jessica Brown" width="36" height="36">
 													<strong>Jessica Brown</strong>
@@ -44,7 +44,6 @@
 												<td class="maw-320">
 													<span class="truncate">Aliquam viverra, metus eget dictum vestibulum, er.</span>
 												</td>
-												<td>$100.00</td>
                                                 <td>21-Nov-2017</td>
 												<td>
 													<span class="label label-info label-pill">New</span>
@@ -56,10 +55,10 @@
 														</a>
 														<ul class="dropdown-menu pull-right">
 															<li>
-																<a href="platillos/editar">Editar</a>
+																<a href="{{url('menus/editar')}}">Editar</a>
 															</li>
 															<li>
-																<a href="platillos/borrar">Borrar</a>
+																<a href="{{url('menus/borrar')}}">Borrar</a>
 															</li>
 														</ul>
 													</div>
@@ -74,7 +73,6 @@
 												<td class="maw-320">
 													<span class="truncate">Praesent ac lobortis libero phasellus.</span>
 												</td>
-												<td>$80.00</td>
                                                 <td>27-Jun-2016</td>
 												<td>
 													<span class="label label-success label-pill">Closed</span>
@@ -86,10 +84,10 @@
 														</a>
 														<ul class="dropdown-menu pull-right">
 															<li>
-																<a href="{{url('platillos/editar')}}">Editar</a>
+																<a href="{{url('menus/editar')}}">Editar</a>
 															</li>
 															<li>
-																<a href="platillos/borrar">Borrar</a>
+																<a href="{{url('menus/borrar')}}">Borrar</a>
 															</li>
 														</ul>
 													</div>

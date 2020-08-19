@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <section class="boxs">
 							<div class="boxs-header">
 								<h3 class="custom-font hb-cyan">
