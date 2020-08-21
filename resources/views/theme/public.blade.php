@@ -25,10 +25,10 @@
                                     <div class="profile-header">
                                         <div class="profile_info " >
                                             <div class="profile-image">
-                                                <img src="assets/images/profile-photo.jpg" alt="" style="border-radius: 50%">
+                                                <img src="assets/images/thekitchen.jpeg" alt="" style="border-radius: 50%; width: 120px;">
                                             </div>
-                                            <h4 class="mb-0"><strong>Alexander</strong></h4>
-                                            <span class="text-muted">Ui UX Designer</span>
+                                            <h4 class="mb-0"><strong>The Kitchen</strong></h4>
+                                            <span class="text-muted">Comida casera</span>
                                         </div>
                                     </div>
                                 </section>
