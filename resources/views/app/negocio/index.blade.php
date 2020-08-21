@@ -66,7 +66,7 @@
 								<div class="row">
 									<div class="col-md-3">
 										<!-- <img src="{{url('img/qr-ejemplo.png')}}" width="200"> -->
-										 {!!QrCode::size(200)->generate("thekitchen.hanalotoch.com") !!}
+										 {!!QrCode::margin(1)->size(200)->generate("thekitchen.hanalotoch.com") !!}
 										<!--
 											$image = \QrCode::format('png')
 															->merge('img/t.jpg', 0.1, true)

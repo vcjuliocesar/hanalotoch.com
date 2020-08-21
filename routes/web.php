@@ -4,15 +4,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 //Rutas públicas
-Route::get('/', 'PublicMenuController@index')->name('index');
-Route::post('/revisar', 'PublicMenuController@revisar')->name('revisar');
+Route::get('/', 'PublicMenuController@index');
+Route::post('/revisar', 'PublicMenuController@revisar');
 
 //Rutas privadas
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-
+Route::get('/home', 'HomeController@index');
 
 //Route::post('/platillos/guardar', 'PlatilloController@store')->name('guardarplatillo');
 
