@@ -7,6 +7,8 @@
 <link rel="icon" type="image/ico" href="{{url('/assets/images/favicon.ico')}}" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- vendor css files -->
 <link rel="stylesheet" href="{{url('/assets/js/vendor/bootstrap/bootstrap.min.css')}}">    
 <link rel="stylesheet" href="{{url('/assets/css/vendor/animsition.min.css')}}">
@@ -17,7 +19,7 @@
 <body id="falcon">
         <div class="col-md-6 col-md-offset-3" style="box-sizing: border-box;">
             <div class="wrapper">
-                <div class="header header-filter" style="background-image: url('assets/images/login-bg.jpg'); background-size: cover; background-position: top center;">
+                <div class="header header-filter" style="background-image: url('assets/images/thekitchen-cover.jpeg'); background-size: cover; background-position: top center; ">
                     <section id="content">    
                         <div class="row">
                             <div class="col-md-12 text-center">
@@ -25,10 +27,9 @@
                                     <div class="profile-header">
                                         <div class="profile_info " >
                                             <div class="profile-image">
-                                                <img src="assets/images/thekitchen.jpeg" alt="" style="border-radius: 50%; width: 120px;">
+                                                <img src="assets/images/thekitchen.jpeg" alt="" style="border-radius: 50%; width: 180px;">
                                             </div>
-                                            <h4 class="mb-0"><strong>The Kitchen</strong></h4>
-                                            <span class="text-muted">Comida casera</span>
+                                            
                                         </div>
                                     </div>
                                 </section>
@@ -36,13 +37,22 @@
                         </div>
                     </section>
                 </div>
+                
             </div>
         </div>
         <section id="content">
                     @yield('content')
         </section>
         <!-- CONTENT -->
-        
+        <footer>
+            <div class="col-md-6 col-md-offset-3" style="box-sizing: border-box;">
+                <section class="box boxs-simple">
+                    <div class="boxs-simple">
+                        
+                    </div>
+                </section>
+            </div>
+        </footer>
     
     <!-- Vendor JavaScripts -->
     <script src="{{url('/assets/bundles/libscripts.bundle.js')}}"></script>

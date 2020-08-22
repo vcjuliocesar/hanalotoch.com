@@ -8,7 +8,6 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <section class="boxs">
-                            
                             <div class="boxs-body">
                                 <div id="b_rootwizard">
                                     <div class="navbar">
@@ -23,12 +22,8 @@
                                                 <li class="">
                                                     <a href="#btab3" data-toggle="tab">Disfruta</a>
                                                 </li>
-                                                
                                             </ul>
                                         </div>
-                                    </div>
-                                    <div id="bar" class="progress progress-striped active">
-                                        <div class="bar progress-bar progress-bar-orange" style="width: 0%;" role="progressbar"></div>
                                     </div>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="btab1">
@@ -114,11 +109,11 @@
                                         </div>
                                         <div class="tab-pane" id="btab3">
                                             <section class="boxs">
-                                                <div class="boxs-body">
-                                                    <div class="col-md-3 col-md-offset-3">
-                                                        <button type="button" class="btn btn-raised btn-success">Haz click aquí para procesar tu pedido.</button> 
+                                                
+                                                    <div class="col-md-6 col-md-offset-3">
+                                                        <button type="button" class="btn btn-raised btn-success">Procesar pedido</button> 
                                                     </div>
-                                                </div>
+                                                
                                             </section>
                                         </div>
                                     </div>
@@ -130,6 +125,33 @@
                                             <a href="javascript:;">Siguiente</a>
                                         </li>
                                     </ul>
+                                </div>
+                            </div>
+                            <hr class="line-dashed full-witdh-line" />
+                            <div class="boxs-footer">
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-4">
+                                        <strong>Tu Hanal Otoch</strong>
+                                        <ul class="list-unstyled">
+                                            <li><a href="{{url('/platillos')}}">Administrar</a></li>
+                                            <li>Soporte técnico</li>
+                                            <li>¿Qué es HanalOtoch.com?
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                        <strong>Sobre nosotros</strong>
+                                        <ul class="list-unstyled">
+                                            <li>Rupestre Software Consulting</li>
+                                            <li>Contáctanos</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                        <strong>Términos legales</strong>
+                                        <ul class="list-unstyled">
+                                            <li>Política de privacidad</li>
+                                            
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </section>

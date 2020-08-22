@@ -1,15 +1,36 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                    
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>:: Falcon - Admin Dashboard ::</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/js/vendor/bootstrap/bootstrap.min.css">
+  <!-- CSS Files -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body id="falcon" class="authentication">
+  <div class="wrapper">
+    <div class="header header-filter" style="background-image: url('/img/bg-login.jpg'); background-size: cover; background-position: top center;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+            <div class="card card-signup">
+                
+              <form method="POST" action="{{ route('login') }}">
+              <div class="header header-primary text-center">
+                  <h4>Hanal Otoch</h4>
+                  
+                </div>          
+              @csrf
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -65,9 +86,27 @@
                             </div>
                         </div>
                     </form>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
+      <footer class="footer mt-20">
+        <div class="container">
+          <div class="col-lg-12 text-center">
+            <a href="signup.html" class="text-uppercase text-white">Create an account</a>
+            <div class="copyright text-white mt-20"> &copy; 2017, made with
+              <i class="fa fa-heart heart"></i> by
+              <a href="http://thememakker.com/" target="_blank">Theme Makker</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-</div>
-@endsection
+  </div>
+  <!--  Vendor JavaScripts -->
+  <script src="assets/bundles/libscripts.bundle.js"></script>
+  <script src="assets/bundles/mainscripts.bundle.js"></script>
+  <!-- Custom Js -->
+  
+</body>
+</html>
