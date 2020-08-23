@@ -47,7 +47,7 @@ class PublicMenuController extends Controller
             }
             next($seleccion);
         }
-        echo json_encode($seleccion);
+        //echo json_encode($seleccion);
         $orden = "";
         $total = 0;
         
@@ -83,13 +83,10 @@ class PublicMenuController extends Controller
             $orden = $orden . $linea;
         }
         $mensaje = $mensaje . $orden . "Total: $". $total .PHP_EOL.PHP_EOL.$domicilio . $cel;
-        return view('menu.revisar', ['mjs' => $mensaje]);
+        return view('app.ordenar', ['mjs' => $mensaje]);
     }
 
-    public function domicilio()
-    {
-        return view('menu.domicilio');
-    }
+    
 
     
 }

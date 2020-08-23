@@ -37,19 +37,23 @@
 											</tr>
 										</thead>
 										<tbody>
+											@foreach($platillos as $platillo)
 											<tr>
-												
 												<td class="nowrap">
-													<img src="assets/images/avatar2.png" alt="Jessica Brown" width="36" height="36">
-													<strong>Jessica Brown</strong>
+													<img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" width="36" height="36">
+													<strong>{{$platillo->nombre}}</strong>
 												</td>
 												<td class="maw-320">
-													<span class="truncate">Aliquam viverra, metus eget dictum vestibulum, er.</span>
+													<span class="truncate">{{$platillo->descripcion}}</span>
 												</td>
-												<td>$100.00</td>
-                                                <td>21-Nov-2017</td>
+												<td>${{$platillo->precio}}</td>
+                                                <td>{{$platillo->updated_at}}</td>
 												<td>
-													<span class="label label-info label-pill">New</span>
+													@if($platillo->status)
+													<span class="label label-success label-pill">Activo</span>
+													@else
+													<span class="label label-primary label-pill">Inactivo</span>
+													@endif
 												</td>
 												<td>
 													<div class="dropdown">
@@ -67,36 +71,7 @@
 													</div>
 												</td>
 											</tr>
-											<tr>
-												
-												<td class="nowrap">
-													<img src="assets/images/avatar3.png" alt="Ruby Dixon" width="36" height="36">
-													<strong>Ruby Dixon</strong>
-												</td>
-												<td class="maw-320">
-													<span class="truncate">Praesent ac lobortis libero phasellus.</span>
-												</td>
-												<td>$80.00</td>
-                                                <td>27-Jun-2016</td>
-												<td>
-													<span class="label label-success label-pill">Closed</span>
-												</td>
-												<td>
-													<div class="dropdown">
-														<a href="#" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-ellipsis-v"></i>
-														</a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="{{url('platillos/editar')}}">Editar</a>
-															</li>
-															<li>
-																<a href="platillos/borrar">Borrar</a>
-															</li>
-														</ul>
-													</div>
-												</td>
-											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>

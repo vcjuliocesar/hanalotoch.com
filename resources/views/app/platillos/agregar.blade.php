@@ -27,7 +27,6 @@
 											<input type="text" class="form-control mb-10" placeholder="P.e.: Pizza de peperoni" data-parsley-trigger="change" required>
 										</div>
 									</div>
-									
 									<hr class="line-dashed full-witdh-line" />
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Descripción</label>
@@ -40,7 +39,6 @@
 										<label class="col-sm-3 control-label">Precio</label>
 										<div class="col-sm-9">
 											<input type="number" class="form-control" placeholder="P.e.: 90" data-parsley-trigger="change" maxlength="12" required>
-                                            
                                         </div>
 									</div>
 									<hr class="line-dashed full-witdh-line" />
@@ -49,12 +47,19 @@
                                         <div class="col-sm-9">
                                             <input type="file" class="filestyle" data-buttonText="Elegir imagen" data-iconName="fa fa-inbox">
                                         </div>
+									</div>
+									<hr class="line-dashed full-witdh-line" />
+									<div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10 checkbox">
+                                            <label>
+												<input type="checkbox" name="optionsCheckboxes" checked="true"> Activar</label>
+												<p class="help-block mb-0">Esta opción activará el platillo, sin embargo, para que mostrarlo en el menú público deberás asignarle un menú desde el Catálogo de Menús.</p>
+                                        </div>
                                     </div>
-									
+									<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
+										<button type="submit" class="btn btn-raised btn-success" id="form3Submit">Guardar cambios</button>
+									</div>
 								</form>
-							</div>
-							<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
-								<button type="submit" class="btn btn-raised btn-default" id="form3Submit">Guardar cambios</button>
 							</div>
 						</section>
                     </div>

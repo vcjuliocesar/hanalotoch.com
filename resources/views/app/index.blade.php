@@ -112,9 +112,9 @@
                                     <div class="col-xs-6 col-sm-4">
                                         <strong>Tu Hanal Otoch</strong>
                                         <ul class="list-unstyled">
-                                            <li><a href="{{url('/platillos')}}">Administrar</a></li>
+                                            <li>¿Qué es HanalOtoch.com?</li>
                                             <li>Soporte técnico</li>
-                                            <li>¿Qué es HanalOtoch.com?
+                                            <li><a href="{{url('/platillos')}}">Administrar</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs-6 col-sm-4">
