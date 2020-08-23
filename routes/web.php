@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 //Rutas públicas
 Route::get('/', 'PublicMenuController@index');
-Route::post('/revisar', 'PublicMenuController@revisar');
+Route::post('/ordenar', 'PublicMenuController@ordenar');
 
 //Rutas privadas
 Auth::routes();

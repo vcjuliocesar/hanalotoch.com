@@ -98,7 +98,7 @@
                                 <div class="card-body">
                                     <h1 class="card-title pricing-card-title">{{$platillo->precio}} <small class="text-muted"></small></h1>
                                     <ul class="list-unstyled mt-3 mb-4">
-                                        <li>{{$platillo->descripcion}},</li>
+                                        <li>{{$platillo->descripcion}}</li>
                                     </ul>
                                     Seleccione:
                                     <select class="form-control" id="{{$loop->iteration}}" name="{{$platillo->id}}">

@@ -31,8 +31,10 @@ class PublicMenuController extends Controller
         return view('app.index', $datos);
     }
 
-    public function revisar(Request $request)
+    public function ordenar(Request $request)
     {
+        //dd($request->json());
+        
         $seleccion=$request->except('_token');
         
         $productosSeleccionados = array();
@@ -45,7 +47,7 @@ class PublicMenuController extends Controller
             }
             next($seleccion);
         }
-
+        echo json_encode($seleccion);
         $orden = "";
         $total = 0;
         
@@ -89,11 +91,6 @@ class PublicMenuController extends Controller
         return view('menu.domicilio');
     }
 
-    public function ordenar(Request $request)
-    {
-        $seleccion=$request->except('_token'); //Elimino el token del array, no se usará.
-        json_encode($seleccion);
-        //return view('menu.revisar');
-    }
+    
 }
 
