@@ -14,7 +14,7 @@ class AddStatusToPlatillos extends Migration
     public function up()
     {
         Schema::table('platillos', function (Blueprint $table) {
-            $table->boolean('status')
+            $table->char('status',3)
                     ->after('imagen');
         });
     }

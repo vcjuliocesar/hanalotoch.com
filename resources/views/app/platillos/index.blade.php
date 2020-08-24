@@ -31,7 +31,6 @@
 												<th>Platillo</th>
 												<th>Descripción</th>
                                                 <th>Precio</th>
-												<th>Fecha de registro</th>
 												<th>Status</th>
 												<th>Acciones</th>
 											</tr>
@@ -47,12 +46,23 @@
 													<span class="truncate">{{$platillo->descripcion}}</span>
 												</td>
 												<td>${{$platillo->precio}}</td>
-                                                <td>{{$platillo->updated_at}}</td>
 												<td>
 													@if($platillo->status)
-													<span class="label label-success label-pill">Activo</span>
+														<form method="post" action="{{ url('/platillos/desactivar/'.$platillo->id) }}">
+															{{csrf_field()}}
+															{{ method_field('PATCH') }}
+															<button type="submit" class="btn btn-danger btn-sm">
+																<i class="fas fa-trash-alt"></i> Activo
+															</button>
+														</form>
 													@else
-													<span class="label label-primary label-pill">Inactivo</span>
+														<form method="post" action="{{ url('/platillos/activar/'.$platillo->id) }}">
+															{{csrf_field()}}
+															{{ method_field('PATCH') }}
+															<button type="submit" class="btn btn-danger btn-sm">
+																<i class="fas fa-trash-alt"></i> Desactivar
+															</button>
+														</form>
 													@endif
 												</td>
 												<td>
@@ -62,10 +72,16 @@
 														</a>
 														<ul class="dropdown-menu pull-right">
 															<li>
-																<a href="platillos/editar">Editar</a>
+																<a href="{{url('/platillos/editar/'.$platillo->id)}}">Editar</a>
 															</li>
 															<li>
-																<a href="platillos/borrar">Borrar</a>
+																<form method="post" action="{{ url('/platillos/borrar/'.$platillo->id) }}">
+																	{{csrf_field()}}
+																	{{ method_field('DELETE') }}
+																	<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('El borrado no podrá revertirse, ¿Desea borrar?');">
+																		<i class="fas fa-trash-alt"></i> Borrar
+																	</button>
+																</form>
 															</li>
 														</ul>
 													</div>

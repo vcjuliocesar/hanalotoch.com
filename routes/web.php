@@ -11,20 +11,26 @@ Route::post('/ordenar', 'PublicMenuController@ordenar');
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 
-//Route::post('/platillos/guardar', 'PlatilloController@store')->name('guardarplatillo');
+//
 
 //Route::get('/platillos/editar/{id}', 'PlatilloController@edit')->name('editarplatillo');
 //Route::patch('/platillos/actualizar/{id}', 'PlatilloController@update')->name('actualizarplatillo');
 //Route::delete('/platillos/borrar', 'PlatilloController@destroy')->name('borrarplatillo');
 //Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy')->name('borrarplatillo');
 
-//Route::post('/negocio/guardar', 'NegocioController@store');
+Route::post('/negocio/guardar', 'NegocioController@store');
 //Route::patch('/negocio/editar/{id}', 'NegocioController@edit');
 
 //Rutas para catalogo de platillos
 Route::get('/platillos', 'PlatilloController@index');
 Route::get('/platillos/crear', 'PlatilloController@create');
-Route::get('/platillos/editar', 'PlatilloController@edit');
+Route::post('/platillos/guardar', 'PlatilloController@store');
+Route::get('/platillos/editar/{id}', 'PlatilloController@edit');
+Route::patch('/platillos/actualizar/{id}', 'PlatilloController@update');
+Route::patch('/platillos/activar/{id}', 'PlatilloController@enable');
+Route::patch('/platillos/desactivar/{id}', 'PlatilloController@disable');
+Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy');
+
 
 //Rutas para catálogo de menus
 Route::get('/menus', 'MenuController@index');

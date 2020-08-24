@@ -26,7 +26,7 @@ class PublicMenuController extends Controller
      */
     public function index()
     {
-        $datos['platillos'] = Platillo::paginate(50);
+        $datos['platillos'] = Platillo::paginate(50)->where('status','=','on');
         //return view('menu.index',$datos);
         return view('app.index', $datos);
     }
