@@ -13,11 +13,12 @@ class Negocio extends Migration
      */
     public function up()
     {
-        Schema::create('negocio', function (Blueprint $table) {
+        Schema::create('negocios', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('whatsapp');
             $table->string('logo');
+            $table->string('cover');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class Negocio extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('negocio');
+        Schema::dropIfExists('negocios');
     }
 }

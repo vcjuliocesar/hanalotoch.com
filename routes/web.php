@@ -39,5 +39,5 @@ Route::delete('/menus/borrar/{id}', 'MenuController@destroy');
 
 //Rutas para datos de negocio
 Route::get('/negocio', 'NegocioController@index');
+Route::get('/negocio/editar', 'NegocioController@edit');
 
-Route::get('/cuenta', 'CuentaController@index');

@@ -25,14 +25,7 @@ class NegocioController extends Controller
      */
     public function index()
     {
-        
-        //$negocio = DB::table('negocio')->first();
-        //dd($negocio);
-        //if ($negocio == null)
-         //   return view('admin.negocio.create'); //Si es null cargar create
-        //Cargar edit, ya que no se cumple al anterior.
-        //return view('admin.negocio.edit', compact($negocio));
-        return view('app.negocio.index');
+        return view('app.negocio.index');        
     }
 
 
@@ -50,5 +43,17 @@ class NegocioController extends Controller
 
         return json_encode($negocio);
 
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit()
+    {
+        $datos['negocios'] = Negocio::all();
+        //echo var_dump($datos);
+        return view('app.negocio.editar', $datos);
     }
 }
