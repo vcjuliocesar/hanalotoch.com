@@ -16,8 +16,8 @@ class Menus extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('descripion');
-            $table->char('status',3);
+            $table->string('descripcion');
+            $table->char('status',3)->default(NULL);
             $table->timestamps();
         });
     }

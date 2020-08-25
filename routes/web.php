@@ -11,12 +11,6 @@ Route::post('/ordenar', 'PublicMenuController@ordenar');
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 
-//
-
-//Route::get('/platillos/editar/{id}', 'PlatilloController@edit')->name('editarplatillo');
-//Route::patch('/platillos/actualizar/{id}', 'PlatilloController@update')->name('actualizarplatillo');
-//Route::delete('/platillos/borrar', 'PlatilloController@destroy')->name('borrarplatillo');
-//Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy')->name('borrarplatillo');
 
 Route::post('/negocio/guardar', 'NegocioController@store');
 //Route::patch('/negocio/editar/{id}', 'NegocioController@edit');
@@ -35,14 +29,15 @@ Route::delete('/platillos/borrar/{id}', 'PlatilloController@destroy');
 //Rutas para catálogo de menus
 Route::get('/menus', 'MenuController@index');
 Route::get('/menus/crear', 'MenuController@create');
-Route::get('/menus/editar', 'MenuController@edit');
+Route::post('/menus/guardar', 'MenuController@store');
+Route::get('/menus/editar/{id}', 'MenuController@edit');
+Route::patch('/menus/actualizar/{id}', 'MenuController@update');
+Route::patch('/menus/activar/{id}', 'MenuController@enable');
+Route::patch('/menus/desactivar/{id}', 'MenuController@disable');
+Route::delete('/menus/borrar/{id}', 'MenuController@destroy');
 
 
 //Rutas para datos de negocio
 Route::get('/negocio', 'NegocioController@index');
 
-
 Route::get('/cuenta', 'CuentaController@index');
-
-//Rutas para datos del usuario
-

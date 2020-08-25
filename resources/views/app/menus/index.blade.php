@@ -30,23 +30,40 @@
 											<tr>
 												<th>Menú</th>
 												<th>Descripción</th>
-												<th>Fecha de creación</th>
+												
 												<th>Status</th>
 												<th>Acciones</th>
 											</tr>
 										</thead>
 										<tbody>
+											@foreach($menus as $menu)
 											<tr>
 												<td class="nowrap">
-													<img src="assets/images/avatar2.png" alt="Jessica Brown" width="36" height="36">
-													<strong>Jessica Brown</strong>
+													
+													<strong>{{$menu->nombre}}</strong>
 												</td>
 												<td class="maw-320">
-													<span class="truncate">Aliquam viverra, metus eget dictum vestibulum, er.</span>
+													<span class="truncate">{{$menu->descripcion}}</span>
 												</td>
-                                                <td>21-Nov-2017</td>
+                                                
 												<td>
-													<span class="label label-info label-pill">New</span>
+													@if($menu->status)
+														<form method="post" action="{{ url('/menus/desactivar/'.$menu->id) }}">
+															{{csrf_field()}}
+															{{ method_field('PATCH') }}
+															<button type="submit" class="btn btn-danger btn-sm">
+																<i class="fas fa-trash-alt"></i> Activo
+															</button>
+														</form>
+													@else
+														<form method="post" action="{{ url('/menus/activar/'.$menu->id) }}">
+															{{csrf_field()}}
+															{{ method_field('PATCH') }}
+															<button type="submit" class="btn btn-danger btn-sm">
+																<i class="fas fa-trash-alt"></i> Desactivar
+															</button>
+														</form>
+													@endif
 												</td>
 												<td>
 													<div class="dropdown">
@@ -55,44 +72,22 @@
 														</a>
 														<ul class="dropdown-menu pull-right">
 															<li>
-																<a href="{{url('menus/editar')}}">Editar</a>
+																<a href="{{url('menus/editar/'.$menu->id)}}">Editar</a>
 															</li>
 															<li>
-																<a href="{{url('menus/borrar')}}">Borrar</a>
+																<form method="post" action="{{ url('/menus/borrar/'.$menu->id) }}">
+																	{{csrf_field()}}
+																	{{ method_field('DELETE') }}
+																	<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('El borrado no podrá revertirse, ¿Desea borrar?');">
+																		<i class="fas fa-trash-alt"></i> Borrar
+																	</button>
+																</form>
 															</li>
 														</ul>
 													</div>
 												</td>
 											</tr>
-											<tr>
-												
-												<td class="nowrap">
-													<img src="assets/images/avatar3.png" alt="Ruby Dixon" width="36" height="36">
-													<strong>Ruby Dixon</strong>
-												</td>
-												<td class="maw-320">
-													<span class="truncate">Praesent ac lobortis libero phasellus.</span>
-												</td>
-                                                <td>27-Jun-2016</td>
-												<td>
-													<span class="label label-success label-pill">Closed</span>
-												</td>
-												<td>
-													<div class="dropdown">
-														<a href="#" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
-															<i class="fa fa-ellipsis-v"></i>
-														</a>
-														<ul class="dropdown-menu pull-right">
-															<li>
-																<a href="{{url('menus/editar')}}">Editar</a>
-															</li>
-															<li>
-																<a href="{{url('menus/borrar')}}">Borrar</a>
-															</li>
-														</ul>
-													</div>
-												</td>
-											</tr>
+											@endforeach
 										</tbody>
 									</table>
 								</div>

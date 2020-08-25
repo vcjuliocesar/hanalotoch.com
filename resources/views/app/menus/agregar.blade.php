@@ -20,34 +20,27 @@
 									<strong>Agregar</strong> menú</h3>
 							</div>
 							<div class="boxs-body">
-								<form class="form-horizontal" name="form3" role="form" id="form3" data-parsley-validate>
+								<form action="{{url('/menus/guardar')}}" method="post" enctype="multipart/form-data" class="form-horizontal" name="form3" role="form" id="form3" data-parsley-validate>
+									{{csrf_field()}}
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Nombre del menú</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control mb-10" placeholder="P.e.: Menú de desayunos" data-parsley-trigger="change" required>
+											<input type="text" id="nombre" name="nombre" class="form-control mb-10" placeholder="P.e.: Menú de desayunos" data-parsley-trigger="change" required>
 										</div>
 									</div>
-									
 									<hr class="line-dashed full-witdh-line" />
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Descripción</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control" placeholder="P.e.: Platillos para desayuno, café, tortas, etc." data-parsley-trigger="change" minlength="6" required>
+											<input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="P.e.: Platillos para desayuno, café, tortas, etc." data-parsley-trigger="change" minlength="6" required>
 										</div>
 									</div>
-									<hr class="line-dashed full-witdh-line" />
-									<div class="form-group">
-                                        <label class="col-sm-3 control-label">Fotografía del menú</label>
-                                        <div class="col-sm-9">
-                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" data-iconName="fa fa-inbox">
-                                        </div>
-                                    </div>
-									
+									<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
+										<button type="submit" class="btn btn-raised btn-default" id="form3Submit">Guardar cambios</button>
+									</div>								
 								</form>
 							</div>
-							<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
-								<button type="submit" class="btn btn-raised btn-default" id="form3Submit">Guardar cambios</button>
-							</div>
+							
 						</section>
                     </div>
                 </div>

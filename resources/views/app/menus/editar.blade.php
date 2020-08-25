@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <section class="boxs">
 							<div class="boxs-header">
 								<h3 class="custom-font hb-cyan">
@@ -24,25 +24,16 @@
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Nombre del menú</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control mb-10" data-parsley-trigger="change" required>
+											<input type="text" class="form-control mb-10" data-parsley-trigger="change" value="{{$menu->nombre}}" required>
 										</div>
 									</div>
-									
 									<hr class="line-dashed full-witdh-line" />
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Descripción</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control" data-parsley-trigger="change" minlength="6" required>
+											<input type="text" class="form-control" data-parsley-trigger="change" minlength="6" value="{{$menu->descripcion}}" required>
 										</div>
-									</div>
-									<hr class="line-dashed full-witdh-line" />
-									<div class="form-group">
-                                        <label class="col-sm-3 control-label">Fotografía del menú</label>
-                                        <div class="col-sm-9">
-                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" data-iconName="fa fa-inbox">
-                                        </div>
-                                    </div>
-									
+									</div>									
 								</form>
 							</div>
 							<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
