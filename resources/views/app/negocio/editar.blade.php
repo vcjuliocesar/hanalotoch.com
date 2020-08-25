@@ -4,11 +4,7 @@
 
 @foreach($negocios as $negocio)
 
-
-
-
-
-<div class="page page-forms-common">
+			<div class="page page-forms-common">
                 <!-- bradcome -->
                 <div class="b-b mb-10">
                     <div class="row">
@@ -72,17 +68,7 @@
 							<div class="boxs-body">
 								<div class="row">
 									<div class="col-md-3">
-										<!-- <img src="{{url('img/qr-ejemplo.png')}}" width="200"> -->
-										 {!!QrCode::margin(1)->size(200)->generate("thekitchen.hanalotoch.com") !!}
-										<!--
-											$image = \QrCode::format('png')
-															->merge('img/t.jpg', 0.1, true)
-															->size(200)->errorCorrection('H')
-															->generate('A simple example of QR code!');
-											$output_file = '/img/qr-code/img-' . time() . '.png';
-											Storage::disk('local')->put($output_file, $image);
-
-										 -->
+										{!!QrCode::margin(1)->size(200)->generate(env('APP_URL')) !!}
 									</div>
 									<div class="col-md-9">
 										Hemos creado para tí un código QR que al ser escaneado por tus clientes llevará directamente a tu menú digital. 
@@ -92,7 +78,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-3">
-										Tu URL es: https://negocio.hanalotoch.com
+										Tu URL es: {{env('APP_URL')}}
 									</div>
 								</div>
 							</div>
