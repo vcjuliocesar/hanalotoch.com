@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\PlatilloController;
-use App\Platillo;
 
+use App\Platillo;
+use App\Http\Controllers\PlatilloController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,8 +33,7 @@ class PublicMenuController extends Controller
 
     public function ordenar(Request $request)
     {
-        //dd($request->json());
-        
+                
         $seleccion=$request->except('_token');
         
         $productosSeleccionados = array();
@@ -47,7 +46,7 @@ class PublicMenuController extends Controller
             }
             next($seleccion);
         }
-        //echo json_encode($seleccion);
+        
         $orden = "";
         $total = 0;
         
@@ -82,6 +81,7 @@ class PublicMenuController extends Controller
             $total = $total + (intval($plato->precio)*$cantidadesSeleccionadas[$i]);
             $orden = $orden . $linea;
         }
+
         $mensaje = $mensaje . $orden . "Total: $". $total .PHP_EOL.PHP_EOL.$domicilio . $cel;
         return view('app.ordenar', ['mjs' => $mensaje]);
     }

@@ -64,6 +64,12 @@
 															</button>
 														</form>
 													@endif
+														<form method="get" action="{{ url('/menus/asignar/'.$menu->id) }}">
+															
+															<button type="submit" class="btn btn-danger btn-sm">
+																<i class="fas fa-trash-alt"></i> Asignar platillos
+															</button>
+														</form>
 												</td>
 												<td>
 													<div class="dropdown">

@@ -35,6 +35,7 @@ Route::patch('/menus/actualizar/{id}', 'MenuController@update');
 Route::patch('/menus/activar/{id}', 'MenuController@enable');
 Route::patch('/menus/desactivar/{id}', 'MenuController@disable');
 Route::delete('/menus/borrar/{id}', 'MenuController@destroy');
+Route::get('/menus/asignar/{id}', 'MenuController@assign');
 
 
 //Rutas para datos de negocio

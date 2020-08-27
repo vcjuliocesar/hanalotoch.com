@@ -50,6 +50,7 @@ class MenuController extends Controller
     {
         $menu = $request->except('_token');
         Menu::insert($menu);
+        
         return redirect("menus")->with('Mensaje','Menú agregado exitosamente.');
     }
 
@@ -67,16 +68,21 @@ class MenuController extends Controller
 
     public function enable($id)
     {
-        $menu = Menu::findOrFail($id);
         Menu::where('id','=',$id)->update(['status' => 'on']);
         return redirect('menus')->with('Mensaje','Menú activado.');
     }
 
     public function disable($id)
     {
-        $menu = Menu::findOrFail($id);
         Menu::where('id','=',$id)->update(['status' => NULL]);
         return redirect('menus')->with('Mensaje','Menú desactivado.');
+    }
+
+    public function assign($id){
+        echo "Aquí se asignan platillos al menú";
+        $menu = Menu::findOrFail($id);
+        echo json_encode($menu);
+        return view('app.asignarmenuplatillo.index');
     }
 
     /**
@@ -88,10 +94,13 @@ class MenuController extends Controller
     public function destroy($id)
     {
         $menu = Menu::findOrFail($id);
-        //if(Storage::delete('public/'.$platillo->imagen)){
         Menu::destroy($id);
-        //}
         return redirect("menus");
     }
+
+
+    //for para guardar uno por uno
+    //$platillo_menu = array('platillo_id', 'menu_id')
+    //PlatilloMenu::insert($platillo_menu)
 
 }

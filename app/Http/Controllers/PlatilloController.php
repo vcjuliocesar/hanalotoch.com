@@ -50,8 +50,7 @@ class PlatilloController extends Controller
     public function store(Request $request)
     {
         $platilloData = $request->except('_token');
-        //echo $request->json_encode;
-        //dd();
+        
         if($request->hasFile('imagen')){
             $platilloData['imagen'] = $request->file('imagen')->store('uploads','public');
         }
@@ -95,34 +94,24 @@ class PlatilloController extends Controller
     {
         $datosPlatillo = request()->except(['_token','_method']);
 
-
         if($request->hasFile('imagen')){
             $platillo = Platillo::findOrFail($id);
             Storage::delete('public/'.$platillo->imagen);
             $datosPlatillo['imagen'] = $request->file('imagen')->store('uploads','public');
         }
-
         Platillo::where('id','=',$id)->update($datosPlatillo);
-
-        //Lineas temporales, se cambiaran mas adelante.
-       // $platillo = Platillo::findOrFail($id);
-        //return view('admin.platillo.edit', compact('platillo'));
         return redirect('platillos')->with('Mensaje','Platillo modificado exitosamente');
     }
 
     public function enable($id)
     {
-        $platillo = Platillo::findOrFail($id);
         Platillo::where('id','=',$id)->update(['status' => 'on']);
-
         return redirect('platillos')->with('Mensaje','Platillo activado.');
     }
 
     public function disable($id)
     {
-        $platillo = Platillo::findOrFail($id);
         Platillo::where('id','=',$id)->update(['status' => NULL]);
-
         return redirect('platillos')->with('Mensaje','Platillo desactivado.');
     }
 
@@ -138,7 +127,6 @@ class PlatilloController extends Controller
         if(Storage::delete('public/'.$platillo->imagen)){
             Platillo::destroy($id);
         }
-        
         return redirect("platillos");
     }
 }
