@@ -13,7 +13,7 @@ class CreatePlatilloMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('platillo_menus', function (Blueprint $table) {
+        Schema::create('platillo_menu', function (Blueprint $table) {
             $table->id();
             $table->integer('platillo_id')->unsigned()->index();
             $table->integer('menu_id')->unsigned()->index();

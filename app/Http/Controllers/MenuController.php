@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\MenuController;
 use App\Menu;
+use App\Platillo;
+use App\PlatilloMenu;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -50,7 +52,6 @@ class MenuController extends Controller
     {
         $menu = $request->except('_token');
         Menu::insert($menu);
-        
         return redirect("menus")->with('Mensaje','Menú agregado exitosamente.');
     }
 
@@ -66,23 +67,58 @@ class MenuController extends Controller
         return view('app.menus.editar', compact('menu'));
     }
 
+    /**
+     * Enable a menu.
+     *
+     * @param  \App\Menu  $id
+     * @return \Illuminate\Http\Response
+     */
     public function enable($id)
     {
         Menu::where('id','=',$id)->update(['status' => 'on']);
         return redirect('menus')->with('Mensaje','Menú activado.');
     }
 
+    /**
+     * Disable a menu.
+     *
+     * @param  \App\Menu  $id
+     * @return \Illuminate\Http\Response
+     */
     public function disable($id)
     {
         Menu::where('id','=',$id)->update(['status' => NULL]);
         return redirect('menus')->with('Mensaje','Menú desactivado.');
     }
 
+    
     public function assign($id){
-        echo "Aquí se asignan platillos al menú";
-        $menu = Menu::findOrFail($id);
-        echo json_encode($menu);
-        return view('app.asignarmenuplatillo.index');
+        $menues['menues'] = Menu::findOrFail($id);
+        $platillos = Platillo::all();
+        return view('app.asignarmenuplatillo.index',[
+            'menues' => $menues,
+            'platillos' => $platillos
+        ]);
+    }
+
+    public function relate(Request $request){
+        //for para guardar uno por uno
+        //$platillo_menu = array('platillo_id', 'menu_id')
+        //PlatilloMenu::insert($platillo_menu)
+        $relations = $request->except('_token');
+       
+        $menu_id = $relations['menu_id'];
+        unset($relations['menu_id']);
+
+        for ($i = 1; $i <= count($relations); $i++) {
+            //echo key($relations) . "<br/>";
+            $platillo_menus = array(key($relations), $menu_id);
+            PlatilloMenu::insert($platillo_menus);
+            next($relations);
+            
+        }
+        echo "verificar BD";
+        //echo json_encode($relations);
     }
 
     /**
@@ -97,10 +133,5 @@ class MenuController extends Controller
         Menu::destroy($id);
         return redirect("menus");
     }
-
-
-    //for para guardar uno por uno
-    //$platillo_menu = array('platillo_id', 'menu_id')
-    //PlatilloMenu::insert($platillo_menu)
 
 }

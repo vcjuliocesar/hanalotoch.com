@@ -111,7 +111,7 @@ class PlatilloController extends Controller
 
     public function disable($id)
     {
-        Platillo::where('id','=',$id)->update(['status' => NULL]);
+        Platillo::where('id','=',$id)->update(['status' => '']);
         return redirect('platillos')->with('Mensaje','Platillo desactivado.');
     }
 
