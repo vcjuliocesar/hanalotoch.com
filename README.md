@@ -1,5 +1,5 @@
 ## About HanalOtoch.com
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Hanal Otoch.com es una aplicación web (y muy pronto móvil también) que permite a los pequeños negocios de venta de comida publicar en su sitio web un menú digital en el que sus clientes podrán elegir sus platillos y encargarlos vía Whatsapp.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Rupestre Software Consulting está patrocinando esta iniciativa.
