@@ -93,10 +93,10 @@ class MenuController extends Controller
 
     
     public function assign($id){
-        $menues['menues'] = Menu::findOrFail($id);
+        $menu = Menu::with('platillos')->findOrFail($id);
         $platillos = Platillo::all();
         return view('app.asignarmenuplatillo.index',[
-            'menues' => $menues,
+            'menu' => $menu,
             'platillos' => $platillos
         ]);
     }

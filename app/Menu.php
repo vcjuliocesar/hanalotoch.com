@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     public function platillos(){
-        return $this->belongsToMany('App\Platillo');
+        return $this->belongsToMany('App\Platillo', 'platillo_menu', 'platillo_id', 'menu_id');
     }
 }
