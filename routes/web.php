@@ -41,5 +41,5 @@ Route::post('/menus/relacionar','MenuController@relate');
 
 //Rutas para datos de negocio
 Route::get('/negocio', 'NegocioController@index');
-Route::get('/negocio/editar', 'NegocioController@edit');
+Route::post('/negocio/editar/{id}', 'NegocioController@store');
 

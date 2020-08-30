@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Negocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class NegocioController extends Controller
 {
@@ -25,7 +26,16 @@ class NegocioController extends Controller
      */
     public function index()
     {
-        return view('app.negocio.index');        
+        $datos['negocios'] = Negocio::all();
+        if($datos != NULL){
+            //Tiene datos, se llama a la edición
+            return view('app.negocio.editar', $datos);
+        }
+        else{
+            //No tiene datos se agregarán
+            return view('app.negocio.index');
+        }
+                
     }
 
 
@@ -35,13 +45,23 @@ class NegocioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $negocio = $request->except('_token');
-            
-        Negocio::insert($negocio);
+        $negocio = request()->except(['_token','_method']);
 
-        return json_encode($negocio);
+        if($request->hasFile('logo')){
+            $neg = Negocio::findOrFail($id);
+            Storage::delete('public/'.$neg->logo);
+            $negocio['logo'] = $request->file('logo')->store('uploads','public');
+        }
+
+        if($request->hasFile('cover')){
+            $neg = Negocio::findOrFail($id);
+            Storage::delete('public/'.$neg->cover);
+            $negocio['cover'] = $request->file('cover')->store('uploads','public');
+        }
+        Negocio::where('id','=',$id)->update($negocio);
+        return redirect('negocio')->with('Mensaje','Tus datos han sido actualizados.');
 
     }
 

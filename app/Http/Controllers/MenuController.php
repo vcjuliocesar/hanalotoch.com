@@ -102,27 +102,23 @@ class MenuController extends Controller
     }
 
     public function relate(Request $request){
-        //for para guardar uno por uno
-        //$platillo_menu = array('platillo_id', 'menu_id')
-        //PlatilloMenu::insert($platillo_menu)
         $relations = $request->except('_token');
-       
         $menu_id = $relations['menu_id'];
         unset($relations['menu_id']);
 
         // borrar todos los platillos
         PlatilloMenu::where('menu_id', $menu_id)->delete();
+
+        //actualizar relaciones
         for ($i = 0; $i < count($relations); $i++) {
-            //echo key($relations) . "<br/>";
             $platillo_menu = array(
                 'platillo_id' => key($relations),
                 'menu_id' => $menu_id);
             PlatilloMenu::insert($platillo_menu);
             next($relations);
-            
         }
-        echo "verificar BD";
-        //echo json_encode($relations);
+
+        return redirect('menus/asignar/'.$menu_id)->with('Mensaje','Menú actualizado.');
     }
 
     /**

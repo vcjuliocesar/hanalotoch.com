@@ -22,40 +22,47 @@
 									Mi<strong> negocio</strong></h3>
 							</div>
 							<div class="boxs-body">
-								<form class="form-horizontal" name="form3" role="form" id="form3" data-parsley-validate>
+								<form class="form-horizontal" name="add" role="form" id="add" action="{{ url('/negocio/editar/'.$negocio->id) }}" method="post" enctype="multipart/form-data" data-parsley-validate>
+									{{ csrf_field() }}
+									
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Nombre del negocio</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control mb-10" placeholder="P.e.: Hanal Otoch" data-parsley-trigger="change" value="{{$negocio->nombre}}" required>
-											
+											<input type="text" class="form-control mb-10" id="nombre" name="nombre" value="{{$negocio->nombre}}" required>
 										</div>
 									</div>
-									
 									<hr class="line-dashed full-witdh-line" />
 									<div class="form-group">
 										<label class="col-sm-3 control-label">Whatsapp</label>
 										<div class="col-sm-9">
-											<input type="number" class="form-control" placeholder="P.e.: Platillos para desayuno, café, tortas, etc." data-parsley-trigger="change" minlength="10" value="{{$negocio->whatsapp}}" required>
+											<input type="number" class="form-control mb-10" id="whatsapp" name="whatsapp" value="{{$negocio->whatsapp}}" required>
 										</div>
 									</div>
 									<hr class="line-dashed full-witdh-line" />
 									<div class="form-group">
                                         <label class="col-sm-3 control-label">Logotipo</label>
                                         <div class="col-sm-9">
-                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" data-iconName="fa fa-inbox">
+                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" name="logo" id="logo" data-iconName="fa fa-inbox">
                                         </div>
+										<div class="col-sm-3">
+											<img src="{{ asset('storage').'/'.$negocio->logo}}" alt="" width="100">
+										</div>
                                     </div>
+									<hr class="line-dashed full-witdh-line" />
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">Foto de portada</label>
                                         <div class="col-sm-9">
-                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" data-iconName="fa fa-inbox">
+                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" name="cover" id="cover" data-iconName="fa fa-inbox">
                                         </div>
+										<div class="col-sm-3">
+											<img src="{{ asset('storage').'/'.$negocio->cover}}" alt="" width="100">
+										</div>
                                     </div>
-									
+									<hr class="line-dashed full-witdh-line" />
+									<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
+										<button type="submit" class="btn btn-raised btn-default" id="form3Submit">Guardar cambios</button>
+									</div>
 								</form>
-							</div>
-							<div class="boxs-footer text-right bg-tr-black lter dvd dvd-top">
-								<button type="submit" class="btn btn-raised btn-default" id="form3Submit">Guardar cambios</button>
 							</div>
 						</section>
                     </div>
