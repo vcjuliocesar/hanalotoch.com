@@ -75,6 +75,7 @@ class MenuController extends Controller
      */
     public function enable($id)
     {
+        Menu::update(['status' => '']);
         Menu::where('id','=',$id)->update(['status' => 'on']);
         return redirect('menus')->with('Mensaje','Menú activado.');
     }
@@ -87,7 +88,7 @@ class MenuController extends Controller
      */
     public function disable($id)
     {
-        Menu::where('id','=',$id)->update(['status' => NULL]);
+        Menu::where('id','=',$id)->update(['status' => '']);
         return redirect('menus')->with('Mensaje','Menú desactivado.');
     }
 
