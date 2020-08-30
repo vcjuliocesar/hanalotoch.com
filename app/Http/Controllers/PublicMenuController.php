@@ -28,33 +28,9 @@ class PublicMenuController extends Controller
      */
     public function index()
     {
-        //Traer el menú activo,  (LISTO)
-        //después consultar sus platillos activos 
-        //Traer los datos del negocio
-        //pasar platillos activos del menú activo y datos del negocio a la vista
-
-
         $menu = Menu::where('status','=',TRUE)->get();
-        //$menu = Menu::with('platillos')->where('status','=',TRUE)->get();
-
-        //$platillos = Platillo::with('menu')->where('status','=',TRUE)-get();
-
-        //dd($platillos);
-
         $negocio = Negocio::get();
 
-        /* echo json_encode($menu);
-        echo json_encode($negocio); */
-
-        /* $result = [
-            'menu' => $menu,
-            'negocio' => $negocio
-        ]; */
-
-        //echo json_encode($result);
-
-        //$datos['platillos'] = Platillo::paginate(50)->where('status','=','on');
-        //return view('menu.index',$datos);
         return view('app.index', [
             'menu' => $menu,
             'negocio' => $negocio
@@ -113,7 +89,15 @@ class PublicMenuController extends Controller
         }
 
         $mensaje = $mensaje . $orden . "Total: $". $total .PHP_EOL.PHP_EOL.$domicilio . $cel;
-        return view('app.ordenar', ['mjs' => $mensaje]);
+
+        //Obtener los datos del negocio
+        $negocio = Negocio::get();
+        
+        //return view('app.ordenar', ['mjs' => $mensaje]);
+        return view('app.ordenar', [
+            'msg' => $mensaje,
+            'negocio' => $negocio
+        ]);
     }
     
 }
