@@ -2,7 +2,30 @@
 
 @section('content')
 
-
+            @foreach($negocio as $neg)
+            <div class="col-md-6 col-md-offset-3" style="box-sizing: border-box;">
+            <div class="wrapper">
+                <div class="header header-filter" style="background-image: url('{{ asset('storage').'/'.$neg->cover}}'); background-size: cover; background-position: top center; ">
+                    <section id="content">    
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <section class="boxs" style="background-color: transparent">
+                                    <div class="profile-header">
+                                        <div class="profile_info " >
+                                            <div class="profile-image">
+                                                <img src="{{ asset('storage').'/'.$neg->logo}}" alt="" style="border-radius: 50%; width: 180px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        <section id="content">
             <div class="page page-forms-wizard">
                 <!-- bradcome -->
                 <div class="row">
@@ -27,29 +50,32 @@
                                         {{csrf_field()}}
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="btab1">
-                                                @foreach($platillos as $platillo)
-                                                <div class="row">
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <strong>{{$platillo->nombre}}</strong>.<br/>
-                                                        {{$platillo->descripcion}}<br/>
-                                                        <strong>{{$platillo->precio}}</strong>
+                                                @foreach($menu as $m)
+                                                    @foreach($m->platillos as $platillo)
+                                                        <div class="row">
+                                                        <div class="col-xs-6 col-md-4">
+                                                            <strong>{{$platillo->nombre}}</strong>.<br/>
+                                                            {{$platillo->descripcion}}<br/>
+                                                            <strong>{{$platillo->precio}}</strong>
+                                                        </div>
+                                                        <div class="col-xs-6 col-md-4">
+                                                            <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" style="border-radius: 5%; width: 120px; ">
+                                                        </div> <br/>
+                                                        <div class="col-xs-6 col-md-4">Seleccione cantidad:<br/>
+                                                            <select class="form-control" id="{{$loop->iteration}}" name="{{$platillo->id}}">
+                                                                <option>0</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-xs-6 col-md-4">
-                                                        <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" style="border-radius: 5%; width: 120px; ">
-                                                    </div> <br/>
-                                                    <div class="col-xs-6 col-md-4">Seleccione cantidad:<br/>
-                                                        <select class="form-control" id="{{$loop->iteration}}" name="{{$platillo->id}}">
-                                                            <option>0</option>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <hr class="line-dashed full-witdh-line" />
+                                                    <hr class="line-dashed full-witdh-line" />
+                                                    @endforeach
                                                 @endforeach
+                                                
                                                 
                                             </div>
                                             <div class="tab-pane" id="btab2">
@@ -128,7 +154,6 @@
                                         <strong>Términos legales</strong>
                                         <ul class="list-unstyled">
                                             <li>Política de privacidad</li>
-                                            
                                         </ul>
                                     </div>
                                 </div>

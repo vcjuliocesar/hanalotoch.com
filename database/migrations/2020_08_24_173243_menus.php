@@ -17,7 +17,7 @@ class Menus extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
-            $table->char('status',3)->default(NULL);
+            $table->boolean('status');
             $table->timestamps();
         });
     }

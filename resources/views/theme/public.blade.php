@@ -18,30 +18,7 @@
 <link rel="stylesheet" href="{{url('/assets/css/main.css')}}">
 </head>
 <body id="falcon">
-        <div class="col-md-6 col-md-offset-3" style="box-sizing: border-box;">
-            <div class="wrapper">
-                <div class="header header-filter" style="background-image: url('assets/images/thekitchen-cover.jpeg'); background-size: cover; background-position: top center; ">
-                    <section id="content">    
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <section class="boxs" style="background-color: transparent">
-                                    <div class="profile-header">
-                                        <div class="profile_info " >
-                                            <div class="profile-image">
-                                                <img src="assets/images/thekitchen.jpeg" alt="" style="border-radius: 50%; width: 180px;">
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                
-            </div>
-        </div>
-        <section id="content">
+        
                     @yield('content')
         </section>
         <!-- CONTENT -->
