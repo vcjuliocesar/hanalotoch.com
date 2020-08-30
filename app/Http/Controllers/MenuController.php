@@ -110,10 +110,14 @@ class MenuController extends Controller
         $menu_id = $relations['menu_id'];
         unset($relations['menu_id']);
 
-        for ($i = 1; $i <= count($relations); $i++) {
+        // borrar todos los platillos
+        PlatilloMenu::where('menu_id', $menu_id)->delete();
+        for ($i = 0; $i < count($relations); $i++) {
             //echo key($relations) . "<br/>";
-            $platillo_menus = array(key($relations), $menu_id);
-            PlatilloMenu::insert($platillo_menus);
+            $platillo_menu = array(
+                'platillo_id' => key($relations),
+                'menu_id' => $menu_id);
+            PlatilloMenu::insert($platillo_menu);
             next($relations);
             
         }
