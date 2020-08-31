@@ -52,7 +52,7 @@
 															{{csrf_field()}}
 															{{ method_field('PATCH') }}
 															<button type="submit" class="btn btn-danger btn-sm">
-																<i class="fas fa-trash-alt"></i> Activo
+																<i class="fas fa-trash-alt"></i> Desactivar
 															</button>
 														</form>
 													@else
@@ -60,7 +60,7 @@
 															{{csrf_field()}}
 															{{ method_field('PATCH') }}
 															<button type="submit" class="btn btn-danger btn-sm">
-																<i class="fas fa-trash-alt"></i> Desactivar
+																<i class="fas fa-trash-alt"></i> Activar
 															</button>
 														</form>
 													@endif

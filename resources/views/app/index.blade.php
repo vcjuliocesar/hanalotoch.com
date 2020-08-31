@@ -56,7 +56,7 @@
                                                         <div class="col-xs-6 col-md-4">
                                                             <strong>{{$platillo->nombre}}</strong>.<br/>
                                                             {{$platillo->descripcion}}<br/>
-                                                            <strong>{{$platillo->precio}}</strong>
+                                                            <strong>${{$platillo->precio}}</strong>
                                                         </div>
                                                         <div class="col-xs-6 col-md-4">
                                                             <img src="{{ asset('storage').'/'.$platillo->imagen}}" alt="{{$platillo->nombre}}" style="border-radius: 5%; width: 120px; ">
