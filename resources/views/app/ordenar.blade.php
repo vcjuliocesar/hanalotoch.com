@@ -32,7 +32,7 @@
                         <section class="boxs">
                             <div class="boxs-body">
                             @foreach($negocio as $neg)
-                                <a href="https://wa.me/{{$neg->whatsapp}}?text={{urlencode($msg)}}." class="btn btn-success btn-lg btn-block" target="_blank"> <i class="fab fa-whatsapp"></i> Haz click aquí para <br/>realizar tu encargo</i></a> 
+                                <a href="https://wa.me/52{{$neg->whatsapp}}?text={{urlencode($msg)}}." class="btn btn-success btn-lg btn-block" target="_blank"> <i class="fab fa-whatsapp"></i> Haz click aquí para <br/>realizar tu encargo</i></a> 
                             @endforeach
                             </div>
                             <hr class="line-dashed full-witdh-line" />
