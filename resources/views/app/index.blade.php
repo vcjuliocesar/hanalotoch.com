@@ -141,16 +141,16 @@
                                     <div class="col-xs-6 col-sm-4">
                                         <strong>Tu Hanal Otoch</strong>
                                         <ul class="list-unstyled">
-                                            <li>¿Qué es HanalOtoch.com?</li>
-                                            <li>Soporte técnico</li>
+                                            <!-- <li>¿Qué es HanalOtoch.com?</li> -->
+                                            <!-- <li>Soporte técnico</li> -->
                                             <li><a href="{{url('/platillos')}}">Administrar</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs-6 col-sm-4">
                                         <strong>Sobre nosotros</strong>
                                         <ul class="list-unstyled">
-                                            <li>Rupestre Software Consulting</li>
-                                            <li>Contáctanos</li>
+                                            <li> <a href="https://rupestre.co" target="_blank">Rupestre Software Consulting</a></li>
+                                            <li><a href="mailto:hola@rupestre.co">Contáctanos</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs-6 col-sm-4">

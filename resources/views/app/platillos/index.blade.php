@@ -8,7 +8,7 @@
 					<div class="row">
 						<div class="col-sm-6 col-xs-12">
 							<h1 class="h3 m-0">Catálogo de <strong>Platillos</strong></h1>
-							<small class="text-muted">Aquí puedes llevar un registro de todos los platillos que <strong>TU_NEGOCIO</strong> ofrece.</small>
+							<small class="text-muted">Aquí puedes llevar un registro de todos los platillos que tu cocina ofrece.</small>
 						</div>
 					</div>
 				</div>
