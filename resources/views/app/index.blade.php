@@ -52,6 +52,7 @@
                                             <div class="tab-pane active" id="btab1">
                                                 @foreach($menu as $m)
                                                     @foreach($m->platillos as $platillo)
+                                                        @if($platillo->status == "on")
                                                         <div class="row">
                                                         <div class="col-xs-6 col-md-4">
                                                             <strong>{{$platillo->nombre}}</strong>.<br/>
@@ -73,6 +74,7 @@
                                                         </div>
                                                     </div>
                                                     <hr class="line-dashed full-witdh-line" />
+                                                        @endif
                                                     @endforeach
                                                     
                                                 @endforeach
