@@ -46,7 +46,7 @@
 									<div class="form-group">
                                         <label class="col-sm-3 control-label">Fotografía</label>
                                         <div class="col-sm-9">
-                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" name="imagen" id="imagen" data-iconName="fa fa-inbox">
+                                            <input type="file" class="filestyle" data-buttonText="Elegir imagen" name="imagen" id="imagen" data-iconName="fa fa-inbox" required>
                                         </div>
 									</div>
 									<hr class="line-dashed full-witdh-line" />
