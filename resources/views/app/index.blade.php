@@ -72,11 +72,14 @@
                                                                 <option>5</option>
                                                             </select>
                                                         </div>
-                                                    </d iv>
+                                                    </div>
                                                     <hr class="line-dashed full-witdh-line" />
                                                         @endif
                                                     @endforeach
+                                                    
                                                 @endforeach
+                                                
+                                                
                                             </div>
                                             <div class="tab-pane" id="btab2">
                                                 <section class="boxs">
